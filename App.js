@@ -65,10 +65,8 @@ export default function App() {
     
     function holdDice(id) {
         setDice(oldDice => oldDice.map(die => {
-            return die.id === id ? 
-                {...die, isHeld: !die.isHeld} :
-                die
-        }))
+            return die.id === id ? {id:die.id,value:die.value, isHeld: !die.isHeld } : die;
+          }));
     }
     
     const diceElements = dice.map(die => (
